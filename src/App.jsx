@@ -16,11 +16,10 @@ function App() {
     <main className="w-screen h-screen flex flex-col items-center justify-center" style={{
       background: pastel.blue
     }}>
-      {/* Border Card */}
+      
       <div className="max-w-2xl w-full my-10 px-4">
         <div className="bg-white rounded-2xl shadow-lg border-b-4 border-r-4 border-[#212121] p-8 relative">
 
-          {/* Dotted border (absolute, pseudo-border effect) */}
           <div style={{
             position: "absolute",
             inset: "12px",
@@ -30,7 +29,6 @@ function App() {
             
           }}></div>
           
-          {/* Heading styled similar to image */}
           <div className="relative z-10 flex flex-col items-center">
             <div className="flex gap-3 text-5xl font-black mt-2 mb-4 drop-shadow-lg font-sans uppercase tracking-wide">
                 <span className="text-border" style={{ color: pastel.yellow, marginRight: "4px" }}>
@@ -46,14 +44,12 @@ function App() {
             </div>
           </div>
 
-          {/* Main navigation component */}
           <div className="relative z-10 mt-4">
             <GraphVisualizer />
           </div>
         </div>
       </div>
       
-      {/* Simple Footer */}
       <footer className="w-full text-center py-3 text-gray-500 font-medium">
         
       </footer>

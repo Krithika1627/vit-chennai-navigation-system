@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { dijkstra } from "./dijkstra";
 
-// Pastel theme color codes
 const pastel = {
   yellow: "#ffe066",
   pink: "#fad1e6",
@@ -10,7 +9,7 @@ const pastel = {
   border: "#d2b4f4",
   dot: "#212121"
 };
-// === EDGE CREATION (Full undirected graph setup) ===
+
 const graph = {};
 function addEdge(a, b, weight) {
   if (!graph[a]) graph[a] = [];
@@ -19,23 +18,22 @@ function addEdge(a, b, weight) {
   graph[b].push([a, weight]);
 }
 
-// All edges (as per your C++/previous inputs)
-addEdge("Main", "SP1", 180);
-addEdge("Main", "Admin/Lib", 120);
-addEdge("Main", "Mgr", 190);
-addEdge("Main", "Ab1", 400);
+addEdge("Main Gate", "SP1", 180);
+addEdge("Main Gate", "Admin/Library", 120);
+addEdge("Main Gate", "Mgr Statue", 190);
+addEdge("Main Gate", "Ab1", 400);
 
-addEdge("SP1", "Guest", 90);
+addEdge("SP1", "Guest House", 90);
 addEdge("SP1", "Mgr", 90);
 addEdge("SP1", "Ab1", 300);
 
-addEdge("Admin/Lib", "Clock", 110);
-addEdge("Admin/Lib", "Gazebo", 130);
-addEdge("Admin/Lib", "Mg", 200);
+addEdge("Admin/Library", "Clock Court", 110);
+addEdge("Admin/Library", "Gazebo", 130);
+addEdge("Admin/Library", "Mg Auditorium", 200);
 
-addEdge("Mgr", "Clock", 110);
-addEdge("Mgr", "Gazebo", 110);
-addEdge("Mgr", "Ab1", 280);
+addEdge("Mgr Statue", "Clock Court", 110);
+addEdge("Mgr Statue", "Gazebo", 110);
+addEdge("Mgr Statue", "Ab1", 280);
 
 addEdge("Ab1", "Gym", 150);
 addEdge("Ab1", "Ab3", 90);
@@ -43,12 +41,12 @@ addEdge("Ab1", "Vmart", 100);
 addEdge("Ab1", "Block A", 90);
 addEdge("Ab1", "North Square", 90);
 
-addEdge("Guest", "Gym", 100);
+addEdge("Guest House", "Gym", 100);
 
-addEdge("Clock", "Delta", 120);
-addEdge("Clock", "SP2", 70);
+addEdge("Clock Court", "Delta Block", 120);
+addEdge("Clock Court", "SP2", 70);
 
-addEdge("Gazebo", "Delta", 120);
+addEdge("Gazebo", "Delta Block", 120);
 addEdge("Gazebo", "SP2", 70);
 
 addEdge("Gym", "Block D1", 80);
@@ -62,16 +60,16 @@ addEdge("Ab3", "Ab4", 140);
 addEdge("Ab3", "Vmart", 160);
 
 addEdge("Vmart", "North Square", 110);
-addEdge("Vmart", "Sigma", 20);
+addEdge("Vmart", "Sigma Block", 20);
 
-addEdge("Block A", "Sigma", 100);
+addEdge("Block A", "Sigma Block", 100);
 
-addEdge("Delta", "Health", 120);
-addEdge("Delta", "Ab2", 180);
-addEdge("Delta", "Block B", 130);
+addEdge("Delta Block", "Health", 120);
+addEdge("Delta Block", "Ab2", 180);
+addEdge("Delta Block", "Block B", 130);
 
-addEdge("SP2", "Mg", 210);
-addEdge("SP2", "Delta", 50);
+addEdge("SP2", "Mg Auditorium", 210);
+addEdge("SP2", "Delta Block", 50);
 
 addEdge("Ab2", "Ab4", 120);
 addEdge("Ab2", "Block B", 180);
