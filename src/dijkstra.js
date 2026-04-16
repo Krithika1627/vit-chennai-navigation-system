@@ -4,7 +4,7 @@ export function dijkstra(graph, start, end) {
     const distances = {};
     const previous = {};
     const visited = {};
-    const pq = []; // min heap emulation
+    const pq = []; 
   
     Object.keys(graph).forEach(node => {
       distances[node] = Infinity;
@@ -28,7 +28,6 @@ export function dijkstra(graph, start, end) {
       }
     }
   
-    // Build shortest path
     const path = [];
     let curr = end;
     while (curr && previous[curr] !== null) {
